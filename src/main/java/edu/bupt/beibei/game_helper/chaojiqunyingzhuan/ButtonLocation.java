@@ -4,8 +4,8 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class ButtonLocation {
-    public static Location 绝对_左上角 = new Location(81, 106);
-    public static Location 绝对_右下角 = new Location(1354, 818);
+    public static Location 绝对_左上角 = new Location(457,233);
+    public static Location 绝对_右下角 = new Location(1462,797);
 
 
     public static Location 主城_获得奖励_确定 = new Location(1408, 411);

@@ -7,7 +7,7 @@ public class ActionController {
     public static Location 武将2 = new Location(26, 39);
     public static Location 武将4 = new Location(12, 62);
     public static Location 武将5 = new Location(12, 73);
-    private static int[] 属性副本武将数 = {2, 1, 2, 2, 2, 2, 2};
+    private static int[] 属性副本武将数 = {2, 1, 2, 1, 2, 2, 2};
     private static int[] 经验副本武将数 = {1, 3, 3, 5, 4, 3, 5, 6};
     private static int[] 活动副本武将数 = {2, 3, 3, 3, 4};
     public static Location 经验 = new Location(17, 19);
@@ -22,8 +22,8 @@ public class ActionController {
 
     public static void main(String[] args) throws Exception {
         instance(属性, 属性副本武将数);
-        扫荡(属性, 8);
-        instance(活动或装备, 活动副本武将数, 40, 5);
+        扫荡(属性, 7);
+        instance(活动或装备, 活动副本武将数);
         扫荡(活动或装备, 5);
 //        instance(经验, 经验副本武将数, 27, 7);
     }
@@ -47,7 +47,7 @@ public class ActionController {
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本_挑战);
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本_传说难度);
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本_确认挑战);
-            CommonHelper.moveAndClickWithMiddleTerminal(武将2);
+//            CommonHelper.moveAndClickWithMiddleTerminal(武将2);
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_武将_出击);
             Thread.sleep(2000);
             for (int i = 0; i < ints[k / instance_available_time]; i++) {
