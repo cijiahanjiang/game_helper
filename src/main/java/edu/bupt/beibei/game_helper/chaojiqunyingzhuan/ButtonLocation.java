@@ -4,8 +4,8 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class ButtonLocation {
-    public static Location 绝对_左上角 = new Location(457,233);
-    public static Location 绝对_右下角 = new Location(1462,797);
+    public static Location 绝对_左上角 = new Location(557,189);
+    public static Location 绝对_右下角 = new Location(1605,775);
 
 
     public static Location 主城_获得奖励_确定 = new Location(1408, 411);
@@ -78,50 +78,19 @@ public class ButtonLocation {
     public static Location 相对_副本_装备 = new Location(17, 45);
     public static Location 相对_副本_挑战 = new Location(84, 20);
 
-
     public static Location 相对_日常 = new Location(88, 20);
 
 
-//    public static int[] 属性副本武将数 = {2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 5, 5, 0, 0, 0, 0};
-//    public static int[] 最大武将数 = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0};
-
-    public static void main(String[] args) throws Exception {
-        int i = 1;
+    public static void main(String[] args) {
         Scanner sb = new Scanner(System.in);
-        while (i > 0) {
-            String s = sb.nextLine();
-            try {
-                getPercentByString(s);
-            } catch (Exception e) {
-
-            }
+        int total = 1;
+        while (total > 0) {
+            String title = sb.nextLine();
+            System.out.println(MouseInfo.getPointerInfo().getLocation().x + "," + MouseInfo.getPointerInfo().getLocation().y);
+            int x = (MouseInfo.getPointerInfo().getLocation().x - ButtonLocation.绝对_左上角.getX()) * 100 / (ButtonLocation.绝对_右下角.getX() - ButtonLocation.绝对_左上角.getX());
+            int y = (MouseInfo.getPointerInfo().getLocation().y - ButtonLocation.绝对_左上角.getY()) * 100 / (ButtonLocation.绝对_右下角.getY() - ButtonLocation.绝对_左上角.getY());
+            System.out.println("public static Location " + title + " = new Location(" + x + ", " + y + ");");
         }
     }
-
-    public static void getPercent(Location location) {
-        int x = (location.getX() - 绝对_左上角.getX()) * 100 / (绝对_右下角.getX() - 绝对_左上角.getX());
-        int y = (location.getY() - 绝对_左上角.getY()) * 100 / (绝对_右下角.getY() - 绝对_左上角.getY());
-        System.out.println(x + ":" + y);
-    }
-
-    public static void getPercentByString(String s) {
-        String[] strs = s.split(" ");
-        String button_name = strs[3];
-        int abs_x = Integer.valueOf(strs[6].split("\\(")[1].split(",")[0]);
-        int abs_y = Integer.valueOf(strs[7].split("\\)")[0]);
-        int x = (abs_x - 绝对_左上角.getX()) * 100 / (绝对_右下角.getX() - 绝对_左上角.getX());
-        int y = (abs_y - 绝对_左上角.getY()) * 100 / (绝对_右下角.getY() - 绝对_左上角.getY());
-        System.out.println("sa" + button_name + " = new Location(" + x + "," + y + ");");
-    }
-
-    public static Location getAbsoluteLocation(Location location) throws Exception {
-        int x = (绝对_右下角.getX() - 绝对_左上角.getX()) * location.getX() / 100 + 绝对_左上角.getX();
-        int y = (绝对_右下角.getY() - 绝对_左上角.getY()) * location.getY() / 100 + 绝对_左上角.getY();
-        Location temp = new Location(x, y);
-        Robot robot = new Robot();
-        robot.mouseMove(temp.getX(), temp.getY());
-        return temp;
-    }
-
 
 }

@@ -26,10 +26,8 @@ public class DaliyController {
     public static Location 幻境_扫荡 = new Location(89, 89);
     public static Location 幻境_确认奖励 = new Location(47, 68);
     public static Location 幻境_关闭 = new Location(94, 7);
-    public static Location 幻境_休境 = new Location(17, 18);
-    public static Location 幻境_生境 = new Location(26, 17);
-    public static Location 幻境_伤境 = new Location(36, 16);
-    public static Location 幻境_杜境 = new Location(43, 16);
+    public static Location 刷新 = new Location(4, 8);
+    public static Location 刷新幻境 = new Location(33, 17);
 
     public static void 挑战过关斩将() {
         CommonHelper.moveAndClickWithTerminal(主界面_日常);
@@ -59,6 +57,19 @@ public class DaliyController {
             CommonHelper.moveAndClickWithTerminal(幻境_扫荡);
             CommonHelper.sleep(800);
             //容错
+            int k = 25;
+            while (k > 0) {
+                k--;
+                CommonHelper.moveAndClickWithTerminal(幻境_确认奖励);
+                CommonHelper.sleep(800);
+            }
+        }
+        for (int i = 0; i < 1; i++) {
+            CommonHelper.moveAndClickWithTerminal(刷新);
+
+            CommonHelper.moveAndClickWithTerminal(刷新幻境);
+            CommonHelper.moveAndClickWithTerminal(幻境_扫荡);
+            CommonHelper.sleep(800);
             int k = 25;
             while (k > 0) {
                 k--;
