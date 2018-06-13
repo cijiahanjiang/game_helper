@@ -1,6 +1,6 @@
 package edu.bupt.beibei.game_helper.chaojiqunyingzhuan;
 
-import java.awt.*;
+import java.awt.Robot;
 import java.util.Calendar;
 
 public class BossHelper {
@@ -16,9 +16,9 @@ public class BossHelper {
     static {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 20);
-        晚上8点半 = calendar.getTimeInMillis();
         calendar.set(Calendar.MINUTE, 30);
         calendar.set(Calendar.SECOND, 00);
+        晚上8点半 = calendar.getTimeInMillis();
         try {
             robot = new Robot();
         } catch (Exception e) {
@@ -39,8 +39,8 @@ public class BossHelper {
                 }
                 Thread.sleep(3500);
             }
-//            if (System.currentTimeMillis() > 晚上8点半)
-//                break;
+            if (System.currentTimeMillis() > 晚上8点半)
+                break;
             Thread.sleep(24000);
         }
     }
