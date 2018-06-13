@@ -1,13 +1,13 @@
 package edu.bupt.beibei.game_helper.chaojiqunyingzhuan;
 
-import java.awt.*;
+import java.awt.MouseInfo;
 import java.util.Scanner;
 
 public class ButtonLocation {
-    public static Location 绝对_左上角 = new Location(557,189);
-    public static Location 绝对_右下角 = new Location(1605,775);
+    public static Location 绝对_左上角 = new Location(82, 104);
+    public static Location 绝对_右下角 = new Location(1357, 821);
 
-
+    public static Location 智力 = new Location(45, 17);
     public static Location 主城_获得奖励_确定 = new Location(1408, 411);
     public static Location 相对_主城_获得奖励_确定 = new Location(48, 69);
     public static Location 主界面_主城 = new Location(1276, 257);
