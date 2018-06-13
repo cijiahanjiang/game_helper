@@ -1,6 +1,6 @@
 package edu.bupt.beibei.game_helper.chaojiqunyingzhuan;
 
-import java.awt.*;
+import java.awt.Robot;
 import java.awt.event.InputEvent;
 
 public class CommonHelper {
@@ -10,6 +10,7 @@ public class CommonHelper {
     public static Location 相对_武将信息_确定 = new Location(56, 98);
     public static Location 相对_武将信息_关闭 = new Location(90, 8);
     public static Location 相对_武将列表_关闭 = new Location(96, 5);
+    public static Location 武将1 = new Location(53, 29);
     private static Robot robot;
 
     static {
@@ -75,21 +76,11 @@ public class CommonHelper {
 
     public static void addLoyalty() throws Exception {
         moveAndClickWithTerminal(ButtonLocation.相对_武将);
-        moveAndClickWithTerminal(ButtonLocation.相对_武将1);
-        moveAndClickWithTerminal(相对_武将信息_道具);
-        Thread.sleep(500);
-        moveAndClickWithTerminal(相对_道具_珠宝);
-        moveAndClickWithTerminal(相对_道具_使用);
-        moveAndClickWithTerminal(相对_武将信息_确定);
-        moveAndClickWithTerminal(相对_武将信息_关闭);
-        moveAndClickWithTerminal(相对_武将列表_关闭);
-        Thread.sleep(1000);
-    }
-
-    public static void addLoyalty(Location location) throws Exception {
-        moveAndClickWithTerminal(ButtonLocation.相对_武将);
         CommonHelper.sleep(500);
-        moveAndClickWithTerminal(location);
+        //根据智力排序
+        moveAndClickWithTerminal(ButtonLocation.智力);
+        CommonHelper.sleep(500);
+        moveAndClickWithTerminal(武将1);
         CommonHelper.sleep(500);
         moveAndClickWithTerminal(相对_武将信息_道具);
         Thread.sleep(500);

@@ -28,10 +28,10 @@ public class 副本 {
 
 
     public static void main(String[] args) throws Exception {
-        instance(属性副本, 属性副本武将数,12);
+        instance(属性副本, 属性副本武将数);
         扫荡(属性副本, 7);
-        instance(兑换活动副本, 兑换活动副本武将数, 40, 5);
-        扫荡(兑换活动副本, 5);
+//        instance(兑换活动副本, 兑换活动副本武将数, 40, 5);
+//        扫荡(兑换活动副本, 5);
     }
 
     public static void instance(Location location, int[] ints, int left) throws Exception {
@@ -46,8 +46,7 @@ public class 副本 {
         Thread.sleep(1000);
         for (int k = 10 * instance_available_time - left; k < count * instance_available_time; k++) {
             System.out.println("第" + (k / instance_available_time + 1) + "副本第" + (k % instance_available_time + 1) + "场");
-            //战斗10场补充忠诚
-            if (k % 10 == 0) CommonHelper.addLoyalty(武将3);
+            if (k % 10 == 0) CommonHelper.addLoyalty();
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本);
             CommonHelper.moveAndClickWithMiddleTerminal(location);
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本_挑战);
