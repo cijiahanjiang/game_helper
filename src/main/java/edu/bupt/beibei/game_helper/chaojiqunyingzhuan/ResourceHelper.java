@@ -2,14 +2,14 @@ package edu.bupt.beibei.game_helper.chaojiqunyingzhuan;
 
 public class ResourceHelper {
     private static String[] 小号 = {
-            "2349001",
-            "2349002",
-            "2349003",
-            "2349004",
-            "2349005",
-            "2349006",
-            "2349007",
-            "2324010",
+            "2196009",
+            "2196010",
+            "2221003",
+            "2221004",
+            "2221006",
+            "2413004",
+            "2413005",
+            "2413006"
     };
     public static Location 争霸 = new Location(25, 50);
     public static Location 争霸定位 = new Location(94, 80);
@@ -30,9 +30,10 @@ public class ResourceHelper {
     }
 
     public static void 占坑() {
+        CommonHelper.sleep(2000);
         CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.世界);
         CommonHelper.moveAndClickWithMiddleTerminal(争霸);
-        CommonHelper.sleep(5000);
+        CommonHelper.sleep(2000);
         for (String s : 小号) {
             CommonHelper.moveAndClickWithMiddleTerminal(争霸定位);
             CommonHelper.moveAndClickWithTerminal(争霸_输入框);
@@ -41,6 +42,8 @@ public class ResourceHelper {
             CommonHelper.moveAndClickWithTerminal(争霸_查找坐标);
             CommonHelper.moveAndClickWithTerminal(争霸_查找坐标);
             CommonHelper.moveAndClickWithMiddleTerminal(主城_关闭);
+            CommonHelper.moveAndClickWithMiddleTerminal(城池);
+            CommonHelper.moveAndClickWithTerminal(撤军);
             CommonHelper.moveAndClickWithMiddleTerminal(城池);
 //            49001
             CommonHelper.moveAndClickWithMiddleTerminal(攻占);
