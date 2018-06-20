@@ -30,8 +30,9 @@ public class 副本 {
     public static void main(String[] args) throws Exception {
         instance(属性副本, 属性副本武将数);
         扫荡(属性副本, 7);
-//        instance(兑换活动副本, 兑换活动副本武将数, 40, 5);
-//        扫荡(兑换活动副本, 5);
+        instance(兑换活动副本, 兑换活动副本武将数, 40, 5);
+        扫荡(兑换活动副本, 5);
+        ResourceHelper.占坑();
     }
 
     public static void instance(Location location, int[] ints, int left) throws Exception {
@@ -52,7 +53,9 @@ public class 副本 {
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本_挑战);
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本_传说难度);
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_副本_确认挑战);
-//            CommonHelper.moveAndClickWithMiddleTerminal(武将2);
+            CommonHelper.moveAndClickWithTerminal(ButtonLocation.智力);
+            CommonHelper.sleep(500);
+            CommonHelper.moveAndClickWithTerminal(武将1);
             CommonHelper.moveAndClickWithMiddleTerminal(ButtonLocation.相对_武将_出击);
             Thread.sleep(2000);
             for (int i = 0; i < ints[k / instance_available_time]; i++) {
