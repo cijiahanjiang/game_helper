@@ -55,6 +55,8 @@ public class CommonHelper {
         }
     }
 
+
+
     public static void moveAndClickWithMiddleTerminal(Location location) {
         Location assLocation = getAbsLocation(location);
         robot.mouseMove(assLocation.getX(), assLocation.getY());

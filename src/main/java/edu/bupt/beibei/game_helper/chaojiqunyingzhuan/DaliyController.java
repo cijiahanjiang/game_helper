@@ -20,8 +20,6 @@ public class DaliyController {
     public static Location 演武榜 = new Location(85, 68);
     public static Location 部署武将_关闭 = new Location(95, 7);
     public static Location 确认部署 = new Location(59, 61);
-    public static Location 扫荡 = new Location(90, 87);
-    public static Location 确认扫荡结果 = new Location(48, 67);
 
     public static Location 幻境_扫荡 = new Location(89, 89);
     public static Location 幻境_确认奖励 = new Location(47, 68);
@@ -50,27 +48,22 @@ public class DaliyController {
 
     public static void 挑战幻境() {
         CommonHelper.moveAndClickWithTerminal(主界面_日常);
+        CommonHelper.sleep(500);
         CommonHelper.moveAndClickWithTerminal(幻境挑战);
-        for (int i = 0; i < 4; i++) {
-            Location location = new Location(7 + i * 10, 18);
-            CommonHelper.moveAndClickWithTerminal(location);
+        CommonHelper.sleep(500);
+        //部署武将
+        CommonHelper.moveAndClickWithTerminal(ButtonLocation.智力);
+        CommonHelper.sleep(500);
+        CommonHelper.moveAndClickWithTerminal(副本.武将4);
+        CommonHelper.moveAndClickWithTerminal(副本.武将2);
+        CommonHelper.moveAndClickWithTerminal(副本.武将1);
+        CommonHelper.moveAndClickWithTerminal(部署武将_关闭);
+        CommonHelper.moveAndClickWithTerminal(确认部署);
+        for (int i = 0; i < 6; i++) {
             CommonHelper.moveAndClickWithTerminal(幻境_扫荡);
             CommonHelper.sleep(800);
             //容错
-            int k = 25;
-            while (k > 0) {
-                k--;
-                CommonHelper.moveAndClickWithTerminal(幻境_确认奖励);
-                CommonHelper.sleep(800);
-            }
-        }
-        for (int i = 0; i < 1; i++) {
-            CommonHelper.moveAndClickWithTerminal(刷新);
-
-            CommonHelper.moveAndClickWithTerminal(刷新幻境);
-            CommonHelper.moveAndClickWithTerminal(幻境_扫荡);
-            CommonHelper.sleep(800);
-            int k = 25;
+            int k = 22;
             while (k > 0) {
                 k--;
                 CommonHelper.moveAndClickWithTerminal(幻境_确认奖励);
