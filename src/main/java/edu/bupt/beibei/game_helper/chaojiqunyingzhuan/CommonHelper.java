@@ -21,8 +21,8 @@ public class CommonHelper {
     }
 
     public static void main(String[] args) {
-        CommonHelper.sleep(1000);
-        input("3603006");
+        sleep(2000);
+        addLoyalty();
     }
 
     public static void input(String id) {
@@ -56,7 +56,6 @@ public class CommonHelper {
     }
 
 
-
     public static void moveAndClickWithMiddleTerminal(Location location) {
         Location assLocation = getAbsLocation(location);
         robot.mouseMove(assLocation.getX(), assLocation.getY());
@@ -76,26 +75,27 @@ public class CommonHelper {
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
     }
 
-    public static void addLoyalty() throws Exception {
+    public static void addLoyalty() {
         moveAndClickWithTerminal(ButtonLocation.相对_武将);
-        CommonHelper.sleep(500);
+        sleep(500);
         //根据智力排序
         moveAndClickWithTerminal(ButtonLocation.智力);
-        CommonHelper.sleep(500);
+        sleep(500);
         moveAndClickWithTerminal(武将1);
-        CommonHelper.sleep(500);
+        sleep(500);
         moveAndClickWithTerminal(相对_武将信息_道具);
-        Thread.sleep(500);
+        sleep(500);
         moveAndClickWithTerminal(相对_道具_珠宝);
-        CommonHelper.sleep(500);
+        sleep(500);
         moveAndClickWithTerminal(相对_道具_使用);
-        CommonHelper.sleep(500);
-        moveAndClickWithTerminal(相对_武将信息_确定);
-        CommonHelper.sleep(500);
+        sleep(500);
+        Location 确认 = new Location(45, 60);
+        moveAndClickWithTerminal(确认);
+        sleep(500);
         moveAndClickWithTerminal(相对_武将信息_关闭);
-        CommonHelper.sleep(500);
+        sleep(500);
         moveAndClickWithTerminal(相对_武将列表_关闭);
-        Thread.sleep(1000);
+        sleep(1000);
     }
 
     public static Location getAbsLocation(Location location) {
